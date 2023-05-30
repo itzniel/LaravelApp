@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class ArticleController extends Controller
 {
     public function index() {
-       return "This is a new Article controller";
+       $testing = "Passing Data";
+        return view('articles.index', compact("testing"));
 }
 }
