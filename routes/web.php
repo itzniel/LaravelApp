@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ArticleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -57,3 +57,5 @@ Route::get('contact/', function () {
     $email=  ['w0817788@gmail.ca'] ;
     return view('pages/contact', compact("email"));
 })->name('contact.show');
+
+route::get('article', [ArticleController::class, 'index'])->name('article.index');
