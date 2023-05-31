@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('name');
             $table->string('body');
-            $table->author_id();
-            $table->category_id();
+            $table->foreignId('author_id');
+            $table->foreignId('category_id');
+            $table->timestamps();
         });
     }
 
