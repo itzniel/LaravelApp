@@ -58,4 +58,6 @@ Route::get('contact/', function () {
     return view('pages/contact', compact("email"));
 })->name('contact.show');
 
-route::get('article', [ArticleController::class, 'index'])->name('article.index');
+route::get('articles', [ArticleController::class, 'index'])->name('article.index');
+
+route::get('articles/{article}', [ArticleController::class, 'show'])->name('article.show');

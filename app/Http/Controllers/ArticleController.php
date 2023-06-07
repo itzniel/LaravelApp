@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Article;
 class ArticleController extends Controller
 {
     public function index() {
@@ -11,4 +12,8 @@ class ArticleController extends Controller
 
         return view('articles.index', compact("articles"));
 }
+    public  function show(Article $article){
+        //  $article = Article::find($article);
+        return view('articles.show', compact("article"));
+    }
 }
