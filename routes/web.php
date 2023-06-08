@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -61,3 +62,7 @@ Route::get('contact/', function () {
 route::get('articles', [ArticleController::class, 'index'])->name('article.index');
 
 route::get('articles/{article}', [ArticleController::class, 'show'])->name('article.show');
+
+route::get('categories', [CategoryController::class, 'index'])->name('categories.index');
+
+route::get('categories/{categories}', [CategoryController::class, 'show'])->name('categories.show');
