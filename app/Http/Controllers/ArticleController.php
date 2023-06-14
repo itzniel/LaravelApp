@@ -13,7 +13,7 @@ class ArticleController extends Controller
         return view('articles.index', compact("articles"));
 }
     public  function show(Article $article){
-        //  $article = Article::find($article);
+
         return view('articles.show', compact("article"));
     }
 }

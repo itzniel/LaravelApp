@@ -8,6 +8,6 @@
             <p>Name: {{ $article->name }}</p>
             <p>Body: {{ $article->body }}</p>
             <p>Author ID: {{ $article->author_id }}</p> <br>
-
     @endforeach
+
 @endsection

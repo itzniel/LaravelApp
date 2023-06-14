@@ -62,7 +62,11 @@ Route::get('contact/', function () {
 route::get('articles', [ArticleController::class, 'index'])->name('article.index');
 
 route::get('articles/{article}', [ArticleController::class, 'show'])->name('article.show');
+//Categories
+Route::get('categories/create', [CategoryController::class, 'create'])->name('categories.create');
 
-route::get('categories', [CategoryController::class, 'index'])->name('categories.index');
+Route::post('categories', [CategoryController::class, 'store'])->name('categories.store');
 
-route::get('categories/{categories}', [CategoryController::class, 'show'])->name('categories.show');
+Route::get('categories', [CategoryController::class, 'index'])->name('categories.index');
+
+Route::get('categories/{category}', [CategoryController::class, 'show'])->name('categories.show');

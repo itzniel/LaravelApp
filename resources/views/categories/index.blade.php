@@ -7,7 +7,7 @@
             <p>ID: {{ $category->id }}</p>
             <p>Name: {{ $category->name }}</p>
             <p>Description: {{ $category->description }}</p>
-
-
+        </div>
     @endforeach
+
 @endsection
