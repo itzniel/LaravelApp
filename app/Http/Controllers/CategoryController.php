@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Category;
+use App\Http\Requests\CategoryRequest;
 
 
 class CategoryController extends Controller
@@ -27,7 +28,7 @@ class CategoryController extends Controller
         return view ('categories.create');
     }
 
-    public function store(Request $request) {
+    public function store(CategoryRequest $request) {
         $formData = $request->all();
 
         Category::create($formData);
