@@ -37,4 +37,15 @@ class CategoryController extends Controller
 
     }
 
+    public function edit($category){
+        $category = Category::findOrFail($category);
+        return view ('categories.edit', compact("category"));
+    }
+    public function update(CategoryRequest $request, $category){
+        $formData = $request->all();
+        $category = Category::findOrFail($category);
+        $category->update($formData);
+
+        return redirect('categories');
+    }
 }

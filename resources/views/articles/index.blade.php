@@ -2,6 +2,7 @@
 @section('', 'article')
 @section('content')
    <h1>All Articles</h1>
+   <a href="{{ route ('articles.create') }}">Create a New Article </a>
     @foreach($articles as $article)
         <div>
             <p>ID: {{ $article->id }}</p>

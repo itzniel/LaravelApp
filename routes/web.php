@@ -58,6 +58,10 @@ Route::get('contact/', function () {
     $email=  ['w0817788@gmail.ca'] ;
     return view('pages/contact', compact("email"));
 })->name('contact.show');
+//Articles routes
+Route::get('articles/create', [ArticleController::class, 'create'])->name('articles.create');
+
+Route::post('articles', [ArticleController::class, 'store'])->name('articles.store');
 
 route::get('articles', [ArticleController::class, 'index'])->name('article.index');
 
@@ -70,3 +74,8 @@ Route::post('categories', [CategoryController::class, 'store'])->name('categorie
 Route::get('categories', [CategoryController::class, 'index'])->name('categories.index');
 
 Route::get('categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
+
+Route::get('categories/{category}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
+
+Route::get('categories/{category}', [CategoryController::class, 'update'])->name('categories.update');
+

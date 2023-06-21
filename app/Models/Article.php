@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
+
+    protected $fillable = [
+        "name",
+        "body"
+    ];
+
     use HasFactory;
     public function category() {
         return $this->belongsTo(Category::class);
