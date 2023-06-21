@@ -21,13 +21,12 @@ class CategoryRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules()
-    {
+    public function rules() {
         return [
-            // validating the create form
-            'name' => 'required|min:5|unique:categories',
+            'name' => 'required|min:5|unique:categories,name,'.
+                $this->segment(2),
             'description' => 'required|min:8'
-
         ];
     }
+
 }
