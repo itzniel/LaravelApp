@@ -16,3 +16,12 @@ Added a delete function, and created a route for it,
 then changed my route to use resources,
 Created a category seeder ' php artisan make:seed CategorySeeder'
 and a category Factory  'php artisan make:factory CategoryFactory'
+
+Added a category and Article seeder and used a php fake to generate random contents
+php artisan make:seed CategorySeeder to generate the seeder for the category
+php artisan make:seed ArticleSeeder to generate the seeder for the article
+
+Added a Factory for category and Article and define the fake contents to be created
+php artisan make:factory CategoryFactory to generate a factory for Category
+php artisan make:factory ArticleFactory to generate a factory for Article
+
