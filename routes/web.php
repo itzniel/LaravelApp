@@ -66,6 +66,7 @@ Route::post('articles', [ArticleController::class, 'store'])->name('articles.sto
 route::get('articles', [ArticleController::class, 'index'])->name('article.index');
 
 route::get('articles/{article}', [ArticleController::class, 'show'])->name('article.show');
+
 //Categories
 Route::get('categories/create', [CategoryController::class, 'create'])->name('categories.create');
 

@@ -9,3 +9,4 @@ composer require laravel/ui="4.*" (To install the dependencies)
 php artisan ui  bootstrap (To install bootstrap scaffolding)
 npm install && npm run (to compile for the frontend)
 php artisan ui:auth (to install authentication scaffolding)
+to deploy easy authetication php artisan make:auth
