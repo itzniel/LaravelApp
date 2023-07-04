@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Models\Category;
-use App\Http\Requests\CategoryRequest;
+    use Illuminate\Http\Request;
+    use Illuminate\Support\Facades\DB;
+    use App\Models\Category;
+    use App\Http\Requests\CategoryRequest;
 
 
 class CategoryController extends Controller
 {
     public function __construct() {
-        $this->middleware('auth', ['only' => ['create', 'edit']]);
+        $this->middleware('auth', ['only' => ['create', 'edit', 'delete']]);
     }
 
     public function index()
@@ -52,4 +52,9 @@ class CategoryController extends Controller
 
         return redirect('categories');
     }
+    public function destroy(Category $category) {
+        $category->delete();
+        return redirect('categories');
+    }
+
 }

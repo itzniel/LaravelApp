@@ -8,7 +8,14 @@
             <p>ID: {{ $article->id }}</p>
             <p>Name: {{ $article->name }}</p>
             <p>Body: {{ $article->body }}</p>
-            <p>Author ID: {{ $article->author_id }}</p> <br>
+            <p>Author ID: {{ $article->author_id }}</p>
+            <br>
+            <form method="POST" action="{{ route('articles.destroy', $article->id) }}">
+                @csrf
+                @method('DELETE')
+                <input type="submit" value="Delete">
+            </form>
+        <br>
     @endforeach
 
 @endsection

@@ -29,5 +29,9 @@ class ArticleController extends Controller
         $article->category()->associate($category)->save();
         return redirect('articles');
     }
+    public function destroy(Article $article) {
+        $article->delete();
+        return redirect('articles');
+    }
 
 }

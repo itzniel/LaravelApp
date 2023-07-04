@@ -59,16 +59,21 @@ Route::get('contact/', function () {
     return view('pages/contact', compact("email"));
 })->name('contact.show');
 //Articles routes
-Route::get('articles/create', [ArticleController::class, 'create'])->name('articles.create');
+Route::resource('articles', ArticleController::class);
+/*Route::get('articles/create', [ArticleController::class, 'create'])->name('articles.create');
 
 Route::post('articles', [ArticleController::class, 'store'])->name('articles.store');
 
-route::get('articles', [ArticleController::class, 'index'])->name('article.index');
+route::get('articles', [ArticleController::class, 'index'])->name('articles.index');
 
-route::get('articles/{article}', [ArticleController::class, 'show'])->name('article.show');
+route::get('articles/{article}', [ArticleController::class, 'show'])->name('articles.show');
 
+Route::delete('articles/{article}', [ArticleController::class, 'destroy'])->name('articles.destroy');
+*/
 //Categories
-Route::get('categories/create', [CategoryController::class, 'create'])->name('categories.create');
+Route::resource('categories', CategoryController::class);
+
+/*Route::get('categories/create', [CategoryController::class, 'create'])->name('categories.create');
 
 Route::post('categories', [CategoryController::class, 'store'])->name('categories.store');
 
@@ -79,6 +84,9 @@ Route::get('categories/{category}/edit', [CategoryController::class, 'edit'])->n
 Route::patch('categories/{category}', [CategoryController::class, 'update'])->name('categories.update');
 
 Route::get('categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
+
+Route::delete('categories/{category}', [CategoryController::class, 'destroy'])->name('categories.destroy');
+*/
 
 
 
