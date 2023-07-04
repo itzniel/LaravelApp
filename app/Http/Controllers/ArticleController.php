@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ArticleRequest;
+use App\Http\Requests\CategoryRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Article;
@@ -27,6 +29,17 @@ class ArticleController extends Controller
         $article = new Article($request->all());
         $article->author_id = 1;
         $article->category()->associate($category)->save();
+        return redirect('articles');
+    }
+    public function edit($article){
+        $article = Article::findOrFail($article);
+        return view ('articles.edit', compact("article"));
+    }
+    public function update(ArticleRequest $request, $article){
+        $formData = $request->all();
+        $article = Article::findOrFail($article);
+        $article->update($formData);
+
         return redirect('articles');
     }
     public function destroy(Article $article) {

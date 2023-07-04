@@ -8,6 +8,7 @@
             <p>ID: {{ $article->id }}</p>
             <p>Name: {{ $article->name }}</p>
             <p>Body: {{ $article->body }}</p>
+            <p>Category ID: {{ $article->category_id }}</p>
             <p>Author ID: {{ $article->author_id }}</p>
             <br>
             <form method="POST" action="{{ route('articles.destroy', $article->id) }}">
