@@ -20,10 +20,6 @@
         <input type="submit" value="Update"><br>
     </form>
 
-    @if ($errors->any())
-        @foreach($errors->all() as $error)
-            {{ $error }}<br>
-        @endforeach
-    @endif
+    @include('partials.displayErrors')
 @endsection
 

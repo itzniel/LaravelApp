@@ -31,3 +31,6 @@ php artisan make:factory ArticleFactory to generate a factory for Article
 Added New Routes, for anage, restore, and forcedelete.
 Changed the masterblade template to use bootstrap, added the functions for manage, restore and forcedelete.
 Enabled the softdelete function
+
+Add a service in the AppServiceProvider.php to dsiplay, last posted article.
+Updated the master.blade.php, Created a displayErrors.blade.php in partials directory to display the any error by using the include (partial.displayError)

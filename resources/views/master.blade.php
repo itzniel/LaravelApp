@@ -22,6 +22,9 @@
 
                         <a class="nav-link" href="{{ url('articles') }}">Articles</a>
                     </ul>
+                    <span class="navbar-text text-right ">
+                    Last posted article: {{ $lastPostedArticle }}<br></span>
+
                 </div>
             </div>
         </nav>

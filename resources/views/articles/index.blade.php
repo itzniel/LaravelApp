@@ -3,10 +3,6 @@
 @section('body')
    <h1>All Articles</h1>
    <a href="{{ route ('articles.create') }}">Create a New Article </a>
-   <span class="navbar-text">
-    Last posted article: {{ $lastPostedArticle }}<br>
-</span>
-
    @foreach($articles as $article)
         <div>
             <p>ID: {{ $article->id }}</p>

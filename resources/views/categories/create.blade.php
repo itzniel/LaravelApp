@@ -10,12 +10,7 @@
        <input name="description" type="text"><br>
        <input type="submit" value="Submit"><br>
    </form>
-
-    @if ($errors->any())
-        @foreach($errors->all() as $error)
-            {{ $error }}<br>
-        @endforeach
-    @endif
+    @include('partials.displayErrors')
 
 
 @endsection
