@@ -1,7 +1,7 @@
 @extends('master')
 
 
-@section('content')
+@section('body')
     <h1>Edit Article Form</h1>
 
     <form method="POST" action="

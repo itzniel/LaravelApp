@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('content')
+@section('body')
     <h1>New Article</h1>
 
     <form method="POST" action="{{ action([\App\Http\Controllers\ArticleController::class, 'store'])}}">

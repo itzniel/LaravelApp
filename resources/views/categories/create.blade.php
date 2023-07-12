@@ -1,6 +1,6 @@
 @extends('master')
 @section('', 'categories')
-@section('content')
+@section('body')
     <h1>New Category Form</h1>
    <form method="POST" action="{{ action([\App\Http\Controllers\CategoryController::class, 'store'])}}">
        {{ csrf_field() }}

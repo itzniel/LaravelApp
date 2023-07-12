@@ -1,6 +1,6 @@
 @extends('master')
 @section('', 'article')
-@section('content')
+@section('body')
     <h1>Article #{{$article->id}}</h1>
     <p> {{ $article->name }}</p>
     <p> {{ $article->body }}</p>

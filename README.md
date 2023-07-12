@@ -25,3 +25,9 @@ Added a Factory for category and Article and define the fake contents to be crea
 php artisan make:factory CategoryFactory to generate a factory for Category
 php artisan make:factory ArticleFactory to generate a factory for Article
 
+'composer dump-autoload' to register the seeder created in the autoloader
+'php artisan db:seed' to seed the database
+
+Added New Routes, for anage, restore, and forcedelete.
+Changed the masterblade template to use bootstrap, added the functions for manage, restore and forcedelete.
+Enabled the softdelete function

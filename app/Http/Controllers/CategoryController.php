@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
     use Illuminate\Support\Facades\DB;
     use App\Models\Category;
     use App\Http\Requests\CategoryRequest;
+    use App\Http\Controllers\ArticleController;
 
 
 class CategoryController extends Controller
@@ -52,9 +53,30 @@ class CategoryController extends Controller
 
         return redirect('categories');
     }
+
+
+    public function manage() {
+        $categories = Category::withTrashed()->get();
+        return view('categories.manage', compact("categories"));
+    }
     public function destroy(Category $category) {
+        $category->articles()->delete();
         $category->delete();
         return redirect('categories');
     }
+    public function restore($category) {
+        Category::withTrashed()->where('id', $category)->restore();
+        Category::findOrFail($category)
+            ->articles()
+            ->restore();
+
+        return redirect('categories');
+    }
+
+    public function forceDelete($category) {
+        Category::onlyTrashed()->where('id', $category)->forceDelete();
+        return redirect('categories');
+    }
+
 
 }

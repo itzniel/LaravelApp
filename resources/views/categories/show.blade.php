@@ -1,6 +1,6 @@
 @extends('master')
 @section('', 'categories')
-@section('content')
+@section('body')
     <h1>Category</h1>
     <h1>ID: {{$category->id}}</h1>
     <p> {{ $category->name }}</p>

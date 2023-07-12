@@ -58,7 +58,10 @@ Route::get('contact/', function () {
     $email=  ['w0817788@gmail.ca'] ;
     return view('pages/contact', compact("email"));
 })->name('contact.show');
+
+
 //Articles routes
+
 Route::resource('articles', ArticleController::class);
 /*Route::get('articles/create', [ArticleController::class, 'create'])->name('articles.create');
 
@@ -71,7 +74,14 @@ route::get('articles/{article}', [ArticleController::class, 'show'])->name('arti
 Route::delete('articles/{article}', [ArticleController::class, 'destroy'])->name('articles.destroy');
 */
 //Categories
+Route::get('categories/manage', [CategoryController::class, 'manage'])->name('categories.manage');
+
+Route::get('categories/{category}/forcedelete', [CategoryController::class, 'forcedelete'])->name('categories.forcedelete');
+
+Route::get('categories/{category}/restore', [CategoryController::class, 'restore'])->name('categories.restore');
+
 Route::resource('categories', CategoryController::class);
+
 
 /*Route::get('categories/create', [CategoryController::class, 'create'])->name('categories.create');
 
