@@ -2,15 +2,12 @@
 @section('', 'categories')
 @section('body')
     <h1>New Category Form</h1>
-   <form method="POST" action="{{ action([\App\Http\Controllers\CategoryController::class, 'store'])}}">
-       {{ csrf_field() }}
-       <label for="name">Name:</label>
-       <input name="name" type="text"><br>
-       <label for="description">Description:</label>
-       <input name="description" type="text"><br>
-       <input type="submit" value="Submit"><br>
-   </form>
-    @include('partials.displayErrors')
-
+    <form method="POST" action="{{ action([\App\Http\Controllers\CategoryController::class, 'store'])}}">
+     @include('partials.categoriesForm',
+       ['buttonName' => 'Create',
+        'name' => old('name'),
+        'description' =>old('description')] )
+    </form>
+    @include('partials.errors')
 
 @endsection

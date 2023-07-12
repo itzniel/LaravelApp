@@ -31,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
        // View::share('lastPostedArticle', $title);
         View::composer('master',function ($view){
             $title = Article::get()->last() ? Article::get()->last()->name : 'No Images';
-            return $view->with('lastPostedArticlek', $title);
+            return $view->with('lastPostedArticle', $title);
         });
 
     }

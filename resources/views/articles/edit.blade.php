@@ -20,6 +20,6 @@
         <input type="submit" value="Update"><br>
     </form>
 
-    @include('partials.displayErrors')
+    @include('partials.errors')
 @endsection
 

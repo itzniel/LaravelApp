@@ -10,7 +10,7 @@
 </head>
 <body style="background-color:rgba(245,245,220,0.32) ">
 <header>
-        <nav class="navbar navbar-expand-lg bg-dark-subtle" data-bs-theme=">
+        <nav class="navbar navbar-expand-md bg-dark-subtle">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Navbar</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,11 +18,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        <a class="nav-link text-dark" href="{{ url('categories') }}"> Categories </a>
+                        <li><a class="nav-link text-dark" href="{{ url('categories') }}"> Categories </a></li>
 
-                        <a class="nav-link" href="{{ url('articles') }}">Articles</a>
+                        <li><a class="nav-link" href="{{ url('articles') }}">Articles</a></li>
                     </ul>
-                    <span class="navbar-text text-right ">
+                    <span class="navbar-text text-right " style="margin-left: 30%">
                     Last posted article: {{ $lastPostedArticle }}<br></span>
 
                 </div>
